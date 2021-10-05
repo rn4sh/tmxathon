@@ -18,4 +18,6 @@ d. The code for the application is located under /monolith - When configuring MT
 e. It's a Weblogic applcation that needs to migrated to Jboss EAP verion 7 </br>
 f. After running the MTA report, your migration's issues will be shown as follows:
 ![image](https://user-images.githubusercontent.com/40291650/136105599-5ed121fa-5b29-41ba-b7b3-4566542a6da4.png)
-
+g. Under the /migration folder in the current repo, you can find the migrated java classes needed (you can simply overwrite yours with those ones)</br>
+h. The file weblogic-ejb-jar.xml is not longer needed and needs to be deleted </br>
+k. The folder src/main/java/weblogic is not needed and needs to be deleted</br>
