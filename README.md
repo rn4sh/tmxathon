@@ -27,11 +27,11 @@ n. Re-run and report - if no issues found, you're good to go
 
 Criteria 2: Deploy to OpenShift
 =====
-For this challenge, you deploy your migrated JBoss App to OpenShift
+For this challenge, you need to deploy your migrated JBoss App to OpenShift
 
 Hints
 =====
-a. Add an OpenShift Profile to your POM file under monolith/pom.xml - a profile example can be found under this repo's /migration folder</br>
+a. Add an OpenShift Profile to your POM file under monolith/pom.xml - an example is provided this repo's /migration/openshift-profile</br>
 b. Login to your OpenShift [Console](https://console.rh-us-east-1.openshift.com/) and create a new project</br>
 c. Under Topology view, your ops team created a template that you can use, it's called Coolstore Monolith and containers your EAP runtime and DB - make sure you use your user ID</br>
 d. You can deploy from your CodeReady Workspace instance - Make sure you're logged to OpenShift first, then switch to the project you just created using: oc project <your-project-name></br>
@@ -43,8 +43,13 @@ oc label dc/coolstore app.kubernetes.io/part-of=coolstore --overwrite && \
 oc annotate dc/coolstore app.openshift.io/connects-to=coolstore-postgresql --overwrite && \
 oc annotate dc/coolstore app.openshift.io/vcs-uri=https://github.com/RedHat-Middleware-Workshops/cloud-native-workshop-v2m1-labs.git --overwrite && \
 oc annotate dc/coolstore app.openshift.io/vcs-ref=ocp-4.7 --overwrite</br>
-f. Deploy the application - build first, then deploy:
-  mvn clean package -Popenshift -f $CHE_PROJECTS_ROOT/cloud-native-workshop-v2m1-labs/monolith
+f. Deploy the application - build first, then deploy:</br>
+  mvn clean package -Popenshift -f $CHE_PROJECTS_ROOT/cloud-native-workshop-v2m1-labs/monolith</br>
   oc start-build coolstore --from-file $CHE_PROJECTS_ROOT/cloud-native-workshop-v2m1-labs/monolith/deployments/ROOT.war --follow</br>
 
   
+Criteria 3: Create a new Quarkus application
+=====
+For this challenge, you need to implement the Inventory project in Quarkus. Under the /inventory folder in your application, you have 3 Java classes to implement
+![image](https://user-images.githubusercontent.com/40291650/136110070-4864704c-0187-449b-91f5-0a569432e95e.png)
+
