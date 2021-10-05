@@ -112,3 +112,29 @@ b. Deploy to OCP</br>
 oc project PLEASE ENTER USERID AT TOP OF PAGE-inventory && \</br>
 mvn clean package -DskipTests -f $CHE_PROJECTS_ROOT/cloud-native-workshop-v2m1-labs/inventory</br>
 
+c. Add some nice labels</br>
+oc label dc/inventory-database app.openshift.io/runtime=postgresql --overwrite && \
+oc label dc/inventory app.kubernetes.io/part-of=inventory --overwrite && \
+oc label dc/inventory-database app.kubernetes.io/part-of=inventory --overwrite && \
+oc annotate dc/inventory app.openshift.io/connects-to=inventory-database --overwrite && \
+oc annotate dc/inventory app.openshift.io/vcs-uri=https://github.com/RedHat-Middleware-Workshops/cloud-native-workshop-v2m1-labs.git --overwrite && \
+oc annotate dc/inventory app.openshift.io/vcs-ref=ocp-4.7 --overwrite </br>
+
+Criteria 5: Deploy to Prod using CI/CD
+=====
+In this challenge, you need to create a new project and deploy the previous application using Jenkins. Feel free to use the template called Coolstore Monolith using pipelines. You will need to install a Jenkins (ephemeral) too, again using the available templates.</br>
+
+Once installed, you can access the builds under the Builds tab and run the sample pipeline. You can also add an "Approval task" at the end.
+Hints
+=====
+a. Approval Task after the "Run tests in DEV": </br>
+            stage ('Approve Go Live') {</br>
+              steps {</br>
+                timeout(time:30, unit:'MINUTES') {</br>
+                  input message:'Go Live in Production (switch to new version)?'</br>
+                }</br>
+              }</br>
+            }</br>
+b. 
+            
+
