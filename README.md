@@ -135,6 +135,8 @@ a. Approval Task after the "Run tests in DEV": </br>
                 }</br>
               }</br>
             }</br>
-b. 
             
+Criteria 6: Monitoring 
+=====
+In this section, you show some monitoring in OpenShift
 
