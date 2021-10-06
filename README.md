@@ -30,11 +30,11 @@ Agenda
 | Monday      | 10 a.m-5 p.m| Enablement 1: Service Mesh|
 | Tuesday      | 10 a.m-5 p.m| Enablement 2: Serverless|
 | Wednesday      | 10 a.m-11 a.m| Hackaton Kickoff|
-| Wednesday      | 11 a.m-5 p.m| Hackaton Preparation: Review Day 1-2 modules and [http://learn.openshift.com](http://learn.openshift.com)|
+|       | 11 a.m-5 p.m| Hackaton Preparation: Review Day 1-2 modules and [http://learn.openshift.com](http://learn.openshift.com)|
 | Thursday      | 10 a.m-5 p.m| Hackaton Day 1|
 | Friday      | 10 a.m-2 p.m| Hackaton Day 2|
-| Friday      | 2 p.m-4 p.m| Project submission and presentation|
-| Friday      | 5 p.m| Announcing Winners|
+|       | 2 p.m-4 p.m| Project submission and presentation|
+|       | 5 p.m| Announcing Winners|
 
 
 Criteria 1: Migrating Legacy Apps to OpenShift
