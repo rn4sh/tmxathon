@@ -56,7 +56,7 @@ f. After running the MTA analysis, your migration's issues will be shown as foll
 g. Under the [/migration](https://github.com/rn4sh/tmxathon/tree/main/migration) folder in the current repo, and to save time, you can use the migrated java classes needed (you can simply overwrite yours with those ones)</br>
 h. The file *weblogic-ejb-jar.xml* is not longer needed and needs to be deleted </br>
 k. The folder *src/main/java/weblogic* is not needed and needs to be deleted</br>
-l. Remove the dependency *org.jboss.spec.javax.rmi:jboss-rmi-api_1.0_spec* from your application POM under your application's *monolith/pom.xml*
+l. Remove the dependency *jboss-rmi-api_1.0_spec* from your application POM under your application's *monolith/pom.xml*
 m. When you finish fixing the migration issues - make sure you can build without any errors using: *mvn -f $CHE_PROJECTS_ROOT/cloud-native-workshop-v2m1-labs/monolith clean package*</br>
 n. Re-run and report - if there are no issues found, you're good to go - Keep your analysis for the final presentation
 
@@ -67,9 +67,9 @@ For this challenge, you need to deploy your migrated JBoss App to OpenShift
 Hints
 =====
 a. Add an OpenShift Profile to your POM file under *monolith/pom.xml* - an example is provided this repo's [/migration/openshift-profile](https://raw.githubusercontent.com/rn4sh/tmxathon/main/migration/openshift-profile)</br>
-b. Login to your OpenShift [Console](https://console.rh-us-east-1.openshift.com/) and create a new Project</br>
-c. Under Topology view, your ops team created a template that you can use, it's called *Coolstore Monolith*. It contains your EAP runtime and DB - make sure you use your User ID (userXX)</br>
-d. You can deploy from your CodeReady Workspace instance - Make sure you're logged to OpenShift first using the actions, then switch to the project you just created using: oc project <your-project-name> </br>
+b. Login to your OpenShift [Console](https://console-openshift-console.apps.cluster-4k8mv.4k8mv.sandbox1663.opentlc.com/) and create a new Project</br>
+c. Under Topology view, your ops team created a template that you can use, it's called *Coolstore Monolith*. It contains your EAP runtime and DB - make sure you use your User ID (userXX) - You find it under the "From Catalog" option</br>
+d. Deploy your source code from your CodeReady Workspace instance - Make sure you're logged to OpenShift first using the actions, then switch to the project you just created using: oc project <your-project-name> </br>
 e. To get a nice topology view with icons, you can add labels to your deployments - you can use the commands [here](https://github.com/rn4sh/tmxathon/blob/main/migration/labels) </br>
 f. Deploy the application - build first, then deploy:</br>
 *mvn clean package -Popenshift -f $CHE_PROJECTS_ROOT/cloud-native-workshop-v2m1-labs/monolith* </br>
