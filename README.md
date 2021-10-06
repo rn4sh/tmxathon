@@ -5,8 +5,7 @@ About
 
 During the TMXathon, you will be working with your team on creating a fully working Production application, using the knowledge you acquired in the first 2 days. At the end of the TMXathon, your application will be judged based on the following criteria:
 
-**Criteria 1: *Migrating Legacy Apps to OpenShift![image](https://user-images.githubusercontent.com/40291650/136206987-106c09d4-1801-48bb-b86e-e1cce73625b2.png)
-***</br>
+**Criteria 1: *Migrating Legacy Apps to OpenShift***</br>
 **Criteria 2: *Deploying your migrated Monolith to OpenShift***</br>
 **Criteria 3: *Breaking your Monolith into Microservices***</br>
 **Criteria 4: *Deploying your Microservice to OpenShift***</br>
@@ -71,8 +70,8 @@ c. Under Topology view, your ops team created a template that you can use, it's 
 d. You can deploy from your CodeReady Workspace instance - Make sure you're logged to OpenShift first using the actions, then switch to the project you just created using: oc project <your-project-name> </br>
 e. To get a nice topology view with icons, you can add labels to your deployments - you can use the commands [here](https://github.com/rn4sh/tmxathon/blob/main/migration/labels) </br>
 f. Deploy the application - build first, then deploy:</br>
-  *mvn clean package -Popenshift -f $CHE_PROJECTS_ROOT/cloud-native-workshop-v2m1-labs/monolith*</br>
-  *oc start-build coolstore --from-file $CHE_PROJECTS_ROOT/cloud-native-workshop-v2m1-labs/monolith/deployments/ROOT.war --follow*</br>
+*mvn clean package -Popenshift -f $CHE_PROJECTS_ROOT/cloud-native-workshop-v2m1-labs/monolith* </br>
+*oc start-build coolstore --from-file $CHE_PROJECTS_ROOT/cloud-native-workshop-v2m1-labs/monolith/deployments/ROOT.war --follow* </br>
   
 Criteria 3: Start Breaking your Monolith: Create a new Microservice Application using [Quarkus](https://quarkus.io/)
 =====
@@ -96,17 +95,17 @@ For this challenge, you will need to deploy your Quarkus Microservice to Openshi
 Hints
 =====
 a. You can use an ephemeral PostgreSQL as your DB - use the following details:
-*Namespace: choose PLEASE ENTER USERID AT TOP OF PAGE-inventory for the first Namespace. Leave the second one as `openshift`</br>
-*Database Service Name: inventory-database</br>
-*PostgreSQL Connection Username: inventory</br>
-*PostgreSQL Connection Password: mysecretpassword</br>
+*Namespace: choose PLEASE ENTER USERID AT TOP OF PAGE-inventory for the first Namespace. Leave the second one as `openshift`*</br>
+*Database Service Name: inventory-database*</br>
+*PostgreSQL Connection Username: inventory*</br>
+*PostgreSQL Connection Password: mysecretpassword*</br>
 *PostgreSQL Database Name: inventory*</br>
 
 b. Deploy your Inventory Microservice to OpenShift - switch to your working namespace first and deploy</br>
-*oc project PLEASE ENTER USERID AT TOP OF PAGE-inventory && \</br>
-*mvn clean package -DskipTests -f $CHE_PROJECTS_ROOT/cloud-native-workshop-v2m1-labs/inventory</br>
+*oc project your_project_name*</br>
+*mvn clean package -DskipTests -f $CHE_PROJECTS_ROOT/cloud-native-workshop-v2m1-labs/inventory*</br>
 
-c. Add some nice labels to logically group apps and see the icons - You can use the suggestion [here](https://github.com/rn4sh/tmxathon/blob/main/inventory/labels)</br>
+c. Add some nice labels to logically group apps and see the icons - You can use the suggestion [here](https://github.com/rn4sh/tmxathon/blob/main/inventory/labels)
 
 Criteria 5: Deploy to Prod using CI/CD
 =====
