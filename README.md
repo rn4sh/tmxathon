@@ -46,10 +46,10 @@ To help you with the migration, you can use the [Migration Toolkit for Applicati
 
 Hints
 =====
-a. You can access your [CodeReady Workspaces instance]() (CRW) and log in using the username and password you’ve been assigned (e.g. PLEASE ENTER YOUR USERID AT TOP OF PAGE/r3dh4t1!) </br>
+a. You can access your [CodeReady Workspaces instance](https://codeready-labs-infra.apps.cluster-4k8mv.4k8mv.sandbox1663.opentlc.com/) (CRW) and log in using the username and password you’ve been assigned - Make sure you delete any previous projects you might have to avoid conflicts </br>
 b. Make sure to Git clone the complete [Repo](https://github.com/RedHat-Middleware-Workshops/cloud-native-workshop-v2m1-labs.git) to your CRW</br>
 c. The MTA tool is located on the left hand side menu - Click on its icon and then on the + sign to create a new configuration </br>
-d. The code for the Weblogic application is located under */monolith* - When configuring MTA for analysis, this folder would be your input </br>
+d. The code for the Weblogic application is located under */monolith* - When configuring MTA for analysis, this folder would be your --input - Make sure you add weblogic as your --source </br>
 e. The Weblogic application that needs to migrated to JBoss EAP, version 7 </br>
 f. After running the MTA analysis, your migration's issues will be shown as follows:
 ![image](https://user-images.githubusercontent.com/40291650/136105599-5ed121fa-5b29-41ba-b7b3-4566542a6da4.png)
