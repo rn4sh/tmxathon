@@ -67,7 +67,7 @@ For this challenge, you need to deploy your migrated JBoss App to OpenShift
 Hints
 =====
 a. Add an OpenShift Profile to your POM file under *monolith/pom.xml* - an example is provided this repo's [/migration/openshift-profile](https://raw.githubusercontent.com/rn4sh/tmxathon/main/migration/openshift-profile)</br>
-b. Login to your OpenShift [Console](https://console-openshift-console.apps.cluster-4k8mv.4k8mv.sandbox1663.opentlc.com/) and create a new Project - call it -userXX-coolstore-dev</br>
+b. Login to your OpenShift [Console](https://console-openshift-console.apps.cluster-4k8mv.4k8mv.sandbox1663.opentlc.com/) and create a new Project - call it userXX-coolstore-dev</br>
 c. Under Topology view, your ops team created a template that you can use, it's called *Coolstore Monolith*. It contains your EAP runtime and DB - make sure you use your User ID (userXX) - You find it under the "From Catalog" option</br>
 d. Deploy your source code from your CodeReady Workspace instance - Make sure you're logged to OpenShift first using the actions, then switch to the project you just created using: oc project <your-project-name> </br>
 e. To get a nice topology view with icons, you can add labels to your deployments - you can use the commands [here](https://github.com/rn4sh/tmxathon/blob/main/migration/labels) </br>
