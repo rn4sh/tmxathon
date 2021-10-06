@@ -115,7 +115,7 @@ For this challenge, you need to create a new Project and deploy the previous app
 
 Once installed, you can access the Jenkins Builds under the *Builds* in your OpenShift Developer's console and run the sample pipeline. You can also add an "Approval task" after the "Run tests in DEV" step. You can refer to the suggestion [here](https://github.com/rn4sh/tmxathon/blob/main/inventory/ApprovalTask) if you're not familiar with Jenkins.
             
-Criteria 6: Monitoring 
+Criteria 6: Monitoring
 =====
 For this challenge, you need to Monitor your application's resources usage, including networking metrics. You will need to run at least 2 Prometheus queries. You can refer to the Monitoring documentation [here](https://docs.openshift.com/container-platform/4.8/monitoring/understanding-the-monitoring-stack.html)
 
