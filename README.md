@@ -1,9 +1,45 @@
-# TMXathon
+# Welcome to TMXathon!
 
-Criteria 1: Migration Legacy Apps to OpenShift
+About
 =====
 
-For this challenge, you’ll work with an existing Java EE application designed for a retail webshop. The current version of the webshop is a Java EE application built for Oracle Weblogic Application Server. As part of a modernization strategy you’ve decided to move this application to JBoss EAP, containerize it, and run it on a Kubernetes platform with OpenShift. The application is currently hsoted [here](https://github.com/RedHat-Middleware-Workshops/cloud-native-workshop-v2m1-labs.git) . Application in question in under the /monolith folder
+During the TMXathon, you will be working with your team on creating a fully working Production application, using the knowledge you acquired in the first 2 days. At the end of the TMXathon, your application will be judged based on the following criteria:
+
+**Criteria 1: *Migrating Legacy Apps to OpenShift![image](https://user-images.githubusercontent.com/40291650/136206987-106c09d4-1801-48bb-b86e-e1cce73625b2.png)
+***</br>
+**Criteria 2: *Deploying your migrated Monolith to OpenShift***</br>
+**Criteria 3: *Breaking your Monolith into Microservices***</br>
+**Criteria 4: *Deploying your Microservice to OpenShift***</br>
+**Criteria 5: *Automating Deployment to Prod using Pipelines***</br>
+**Criteria 6: *Monitoring using Prometheus Queries and Metrics***</br>
+
+Bonus points will be awarded for:
+
+***Including at least one Serverless application***</br>
+***Monitoring your application using a Service mesh***</br>
+***Advanced deployment techniques, including pushing your containers to an external registry***</br>
+***Restricting your apps CPU and Memory resources***</br>
+***Create your own Identity provider, or simply connect to an existing one***</br>
+
+
+Agenda
+=====
+| Day        | Time           | Activity    |       
+| ------------- | ------------- | ------------- |
+| Monday      | 10 a.m-5 p.m| Enablement 1: Service Mesh|
+| Tuesday      | 10 a.m-5 p.m| Enablement 2: Serverless|
+| Wednesday      | 10 a.m-11 a.m| Hackaton Kickoff|
+| Wednesday      | 11 a.m-5 p.m| Hackaton Preparation: Review Day 1-2 modules and [http://learn.openshift.com](http://learn.openshift.com)|
+| Thursday      | 10 a.m-5 p.m| Hackaton Day 1|
+| Friday      | 10 a.m-2 p.m| Hackaton Day 2|
+| Friday      | 2 p.m-4 p.m| Project submission and presentation|
+| Friday      | 5 p.m| Announcing Winners|
+
+
+Criteria 1: Migrating Legacy Apps to OpenShift
+=====
+
+For this challenge, you’ll work with an existing Java EE application designed for a retail webshop. The current version of the webshop is a Java EE application built for Oracle Weblogic Application Server. As part of a modernization strategy you’ve decided to move this application to JBoss EAP, containerize it, and run it on a Kubernetes platform with OpenShift. The application is currently hosted [here](https://github.com/RedHat-Middleware-Workshops/cloud-native-workshop-v2m1-labs.git) . Application in question in under the /monolith folder
 
 To help you with the migration, you can use the [Migration Toolkit for Applications](https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html/introduction_to_the_migration_toolkit_for_applications/what-is-the-toolkit_getting-started-guide) (MTA) IDE Plugin based on CodeReady Workspaces. 
 
@@ -13,13 +49,13 @@ a. You can access your [CodeReady Workspaces instance]() (CRW) and log in using 
 b. Make sure to Git clone the complete [Repo](https://github.com/RedHat-Middleware-Workshops/cloud-native-workshop-v2m1-labs.git) to your CRW</br>
 c. The MTA tool is located on the left hand side menu - Click on its icon and then on the + sign to create a new configuration </br>
 d. The code for the Weblogic application is located under */monolith* - When configuring MTA for analysis, this folder would be your input </br>
-e. The Weblogic applcation that needs to migrated to JBoss EAP, version 7 </br>
+e. The Weblogic application that needs to migrated to JBoss EAP, version 7 </br>
 f. After running the MTA analysis, your migration's issues will be shown as follows:
 ![image](https://user-images.githubusercontent.com/40291650/136105599-5ed121fa-5b29-41ba-b7b3-4566542a6da4.png)
 g. Under the [/migration](https://github.com/rn4sh/tmxathon/tree/main/migration) folder in the current repo, and to save time, you can use the migrated java classes needed (you can simply overwrite yours with those ones)</br>
 h. The file *weblogic-ejb-jar.xml* is not longer needed and needs to be deleted </br>
 k. The folder *src/main/java/weblogic* is not needed and needs to be deleted</br>
-l. Remove the dependency *org.jboss.spec.javax.rmi:jboss-rmi-api_1.0_spec* from your application POM under youc code's *monolith/pom.xml*
+l. Remove the dependency *org.jboss.spec.javax.rmi:jboss-rmi-api_1.0_spec* from your application POM under your application's *monolith/pom.xml*
 m. When you finish fixing the migration issues - make sure you can build without any errors using: *mvn -f $CHE_PROJECTS_ROOT/cloud-native-workshop-v2m1-labs/monolith clean package*</br>
 n. Re-run and report - if there are no issues found, you're good to go - Keep your analysis for the final presentation
 
@@ -33,7 +69,7 @@ a. Add an OpenShift Profile to your POM file under *monolith/pom.xml* - an examp
 b. Login to your OpenShift [Console](https://console.rh-us-east-1.openshift.com/) and create a new Project</br>
 c. Under Topology view, your ops team created a template that you can use, it's called *Coolstore Monolith*. It contains your EAP runtime and DB - make sure you use your User ID (userXX)</br>
 d. You can deploy from your CodeReady Workspace instance - Make sure you're logged to OpenShift first using the actions, then switch to the project you just created using: oc project <your-project-name> </br>
-e. To get a nice topoly view with icons, you can add labels to your deployments - you can use the commands [here](https://github.com/rn4sh/tmxathon/blob/main/migration/labels) </br>
+e. To get a nice topology view with icons, you can add labels to your deployments - you can use the commands [here](https://github.com/rn4sh/tmxathon/blob/main/migration/labels) </br>
 f. Deploy the application - build first, then deploy:</br>
   *mvn clean package -Popenshift -f $CHE_PROJECTS_ROOT/cloud-native-workshop-v2m1-labs/monolith*</br>
   *oc start-build coolstore --from-file $CHE_PROJECTS_ROOT/cloud-native-workshop-v2m1-labs/monolith/deployments/ROOT.war --follow*</br>
@@ -55,7 +91,7 @@ Configure your *src/main/resources/application.properties* with your application
 
 Criteria 4: Deploy your Microservice to OpenShift
 =====
-For this challenge, you will need to deploy your Quarkus Microservcie to Openshift. Remember that your application is using a PostgreSQL DB.
+For this challenge, you will need to deploy your Quarkus Microservice to Openshift. Remember that your application is using a PostgreSQL DB.
 
 Hints
 =====
