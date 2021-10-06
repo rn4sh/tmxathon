@@ -16,9 +16,11 @@ Bonus points will be awarded for:
 
 ***Including at least one Serverless application***</br>
 ***Monitoring your application using a Service mesh***</br>
+***Create your own Identity provider, or simply connect to an existing one***</br>
 ***Advanced deployment techniques, including pushing your containers to an external registry***</br>
 ***Restricting your apps CPU and Memory resources***</br>
 ***Create your own Identity provider, or simply connect to an existing one***</br>
+***Include Event Driven Architecture components***</br>
 
 
 Agenda
