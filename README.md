@@ -96,7 +96,7 @@ For this challenge, you will need to deploy your Quarkus Microservice to Openshi
 Hints
 =====
 a. You can use an ephemeral PostgreSQL as your DB - use the following details:
-*Namespace: choose PLEASE ENTER USERID AT TOP OF PAGE-inventory for the first Namespace. Leave the second one as `openshift`*</br>
+*Namespace: choose userXX-coolstore-dev for the first Namespace. Leave the second one as `openshift`*</br>
 *Database Service Name: inventory-database*</br>
 *PostgreSQL Connection Username: inventory*</br>
 *PostgreSQL Connection Password: mysecretpassword*</br>
