@@ -41,7 +41,7 @@ Criteria 1: Migrating Legacy Apps to OpenShift
 
 For this challenge, you’ll work with an existing Java EE application designed for a retail webshop. The current version of the webshop is a Java EE application built for Oracle Weblogic Application Server. As part of a modernization strategy you’ve decided to move this application to JBoss EAP, containerize it, and run it on a Kubernetes platform with OpenShift. The application is currently hosted [here](https://github.com/RedHat-Middleware-Workshops/cloud-native-workshop-v2m1-labs.git) . Application in question in under the /monolith folder
 
-To help you with the migration, you can use the [Migration Toolkit for Applications](https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html/introduction_to_the_migration_toolkit_for_applications/what-is-the-toolkit_getting-started-guide) (MTA) IDE Plugin based on CodeReady Workspaces. 
+To help you with the migration, you can use the [Migration Toolkit for Applications](https://developers.redhat.com/products/mta/use-cases) (MTA) IDE Plugin based on CodeReady Workspaces. 
 
 Hints
 =====
