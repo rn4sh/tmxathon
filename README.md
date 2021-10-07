@@ -67,7 +67,7 @@ For this challenge, you need to deploy your migrated JBoss App to OpenShift
 Hints
 =====
 a. Add an OpenShift Profile to your POM file under *monolith/pom.xml* - an example is provided this repo's [/migration/openshift-profile](https://raw.githubusercontent.com/rn4sh/tmxathon/main/migration/openshift-profile)</br>
-b. Login to your OpenShift [Console](https://console-openshift-console.apps.cluster-4k8mv.4k8mv.sandbox1663.opentlc.com/) and create a new Project - call it userXX-coolstore-dev</br>
+b. Login to your OpenShift [Console](https://console-openshift-console.apps.cluster-4k8mv.4k8mv.sandbox1663.opentlc.com/) and create a new Project - call it **userXX-coolstore-dev**(userXX is your assigned UserID)</br>
 c. Under Topology view, your ops team created a template that you can use, it's called *Coolstore Monolith*. It contains your EAP runtime and DB - make sure you use your User ID (userXX) - You find it under the "From Catalog" option</br>
 d. Deploy your source code from your CodeReady Workspace instance - Make sure you're logged to OpenShift first using the actions, then switch to the project you just created using: oc project <your-project-name> </br>
 e. To get a nice topology view with icons, you can add labels to your deployments - you can use the commands [here](https://github.com/rn4sh/tmxathon/blob/main/migration/labels) </br>
@@ -111,11 +111,11 @@ c. Add some nice labels to logically group apps and see the icons - You can use 
 
 Criteria 5: Deploy to Prod using CI/CD
 =====
-For this challenge, you need to create a new Project, call it userXX-coolstore-prod, and deploy the previous application using Jenkins. This project will act as your PROD environment. Feel free to use the template called *Coolstore Monolith using pipelines* in your developer's catalog. You will also need to install a Jenkins (ephemeral) image, again using the available templates provided by your Operations team.</br>
+For this challenge, you need to create a new Project, call it **userXX-coolstore-prod** (userXX is your assigned UserID), and deploy the previous application using Jenkins. This project will act as your PROD environment. Feel free to use the template called *Coolstore Monolith using pipelines* in your developer's catalog. You will also need to install a Jenkins (ephemeral) image, again using the available templates provided by your Operations team.</br>
 
 Once installed, you can access the Jenkins Builds under the *Builds* in your OpenShift Developer's console and run the sample pipeline. You can also add an "Approval task" after the "Run tests in DEV" step. You can refer to the suggestion [here](https://github.com/rn4sh/tmxathon/blob/main/inventory/ApprovalTask) if you're not familiar with Jenkins.
             
 Criteria 6: Monitoring
 =====
-For this challenge, you need to Monitor your application's resources usage, including networking metrics. You will need to run at least 2 Prometheus queries. You can refer to the Monitoring documentation [here](https://docs.openshift.com/container-platform/4.8/monitoring/understanding-the-monitoring-stack.html)
+For this challenge, you need to Monitor your application's resources usage, including networking metrics. You will need to run at least 2 Prometheus queries. You can refer to the Monitoring documentation [here](https://docs.openshift.com/container-platform/4.8/monitoring/understanding-the-monitoring-stack.html) - If you're not a Cluster admin, you might need to ask for additional priviliges.
 
